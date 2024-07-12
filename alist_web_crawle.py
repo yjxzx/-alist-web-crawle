@@ -9,7 +9,7 @@ from selenium.webdriver.chrome.options import Options
 chrome_options = Options()
 chrome_options.add_argument('--ignore-certificate-errors')
 
-driver_path = r'F:\Tool\Chrome——drive\chromedriver.exe'  # 指定你的ChromeDriver路径
+driver_path = r'F:\Tool\Chrome——drive\chromedriver.exe' 
 
 exist_url = []
 
@@ -19,11 +19,11 @@ def create_driver():
     return driver
 
 def collect_links(seed, depth):
-    driver = create_driver()  # 创建新的WebDriver实例
+    driver = create_driver() 
     try:
         driver.get(seed)
         exist_url.append(seed)
-        my_element_css = 'list-item.hope-stack.hope-c-dhzjXW.hope-c-PJLV.hope-c-PJLV-ikoJJtX-css'
+        my_element_css = 'your_elements/修改元素'
         ignored_exceptions = (NoSuchElementException, StaleElementReferenceException,TimeoutException)
         link_elements = WebDriverWait(driver, 10, ignored_exceptions=ignored_exceptions).until(
             EC.presence_of_all_elements_located((By.CLASS_NAME, my_element_css))
@@ -41,9 +41,9 @@ def collect_links(seed, depth):
         
     except Exception as e:
         WebDriverWait(driver, 10).until(
-            EC.presence_of_all_elements_located((By.CLASS_NAME, 'hope-button.hope-c-ivMHWx.hope-c-ivMHWx-kcPQpq-variant-subtle.hope-c-ivMHWx-kWSPeQ-size-md.hope-c-ivMHWx-dvmlqS-cv.hope-c-PJLV.hope-c-PJLV-iikaotv-css'))
+            EC.presence_of_all_elements_located((By.CLASS_NAME, 'your_elements/修改元素'))
         )
-        down_link = driver.find_elements(By.CLASS_NAME, 'hope-button.hope-c-ivMHWx.hope-c-ivMHWx-kcPQpq-variant-subtle.hope-c-ivMHWx-kWSPeQ-size-md.hope-c-ivMHWx-dvmlqS-cv.hope-c-PJLV.hope-c-PJLV-iikaotv-css')
+        down_link = driver.find_elements(By.CLASS_NAME, 'your_elements/修改元素')
         for each in down_link:
             down_href =  each.get_attribute('href')
             with open("xiaoliaoyou_link.txt", 'a', encoding='utf-8') as f:
@@ -53,7 +53,7 @@ def collect_links(seed, depth):
 
 
 def main():
-    url_root = 'https://pan.t-satoru.top/ode5/Galgames/%E4%BB%8E%E5%85%B6%E4%BB%96%E7%AB%99%E6%90%AC%E8%BF%90%E7%9A%84%20%E5%AF%86%E7%A0%81%E6%9C%A8%E5%81%B6%20%E4%B8%8D%E6%8F%90%E4%BE%9B%E5%94%AE%E5%90%8E%E6%9C%8D%E5%8A%A1/9-nine' 
+    url_root = '你的url/your_url' 
     collect_links(url_root, 0)
 
 if __name__ == "__main__":
