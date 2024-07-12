@@ -1,6 +1,6 @@
 # alist-web crawler
 
-基于 Selenium 对 alist 下载链接的爬取。
+基于 Selenium 对 alist 下载链接的爬取/alist-web crawler
 
 ## 代码文件
 代码在 `alist_web_crawle.py` 中。
