@@ -26,8 +26,9 @@ from selenium.webdriver.chrome.options import Options
 driver_path = r'F:\Tool\Chrome——drive\chromedriver.exe'
 ```
 
-### 4. 保存下载链接
+### 4. change your elements/修改你想要的元素
 
+### 5. 保存下载链接
 最后的下载链接保存在当前运行 alist_web_crawle.py 的目录下。ode6.txt 记录所有链接。
 
 
@@ -61,7 +62,9 @@ from selenium.webdriver.chrome.options import Options
 driver_path = r'F:\Tool\Chrome——drive\chromedriver.exe'
 ```
 
-### 4. Save download links  
+### 4. change your elements/修改你想要的元素
+
+### 5. Save download links  
 Finally, the downloaded links will be saved in the current directory where alist_web_crawle.py is run. code6.txt records all links.
 
 
